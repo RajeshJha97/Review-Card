@@ -115,3 +115,17 @@ body {
     margin-bottom: 5px;
   }
 }
+
+@media only screen and (min-height: 200px) and (max-width: 700px) {
+  .btns {
+    width: 20vw;
+  }
+  .review-underline {
+    width: 30vw;
+  }
+  .article-container {
+    width: 70vw;
+    height: 100vh;
+    overflow-wrap: break-word;
+  }
+}
