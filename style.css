@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
+:root {
+  --fontfamily: 'Edu SA Beginner', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+main {
+  margin-top: 100px;
+}
+body {
+  background-color: rgb(195, 191, 191);
+}
+.section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.review-heading {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: -40px;
+}
+.review-underline {
+  width: 8vw;
+  height: 1vh;
+  background-color: rgb(178, 243, 200);
+  margin-bottom: 40px;
+}
+.article-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 8px 10px 12px;
+  background-color: beige;
+  overflow-wrap: break-word;
+  font-family: var(--fontfamily);
+}
+.review-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.review-content {
+  width: 40vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.btn-section {
+  margin: 1rem;
+}
+.btns {
+  margin-right: 1.2rem;
+  border: none;
+  background: rgb(178, 243, 200);
+  cursor: pointer;
+  border-radius: 30%;
+  width: 10vw;
+}
+.btns:hover {
+  background-color: #0f3d3e;
+  color: #fff9ca;
+}
+.image {
+  width: 170px;
+  height: 150px;
+  border-radius: 50%;
+  margin-top: 25px;
+}
+.title {
+  margin-top: 10px;
+  margin-bottom: -20px;
+  color: rgb(100, 100, 249);
+}
+
+#name {
+  margin-top: 15px;
+}
+
+@media only screen and (max-width: 992px) {
+  .btns {
+    width: 20vw;
+  }
+  .review-underline {
+    width: 30vw;
+  }
+  .article-container {
+    width: 70vw;
+    height: 60vh;
+    overflow-wrap: break-word;
+  }
+}
+@media only screen and (min-width: 240px) and (max-width: 991px) {
+  .btns {
+    width: 20vw;
+  }
+  .review-underline {
+    width: 30vw;
+  }
+  .article-container {
+    width: 95vw;
+    height: 65vh;
+    overflow-wrap: break-word;
+  }
+  .title {
+    margin-bottom: 5px;
+  }
+}
