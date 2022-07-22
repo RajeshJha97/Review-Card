@@ -38,6 +38,8 @@ const btns = document.querySelectorAll('.btns');
 const prevoiusBtn = document.querySelectorAll('.previous');
 const nextBtn = document.querySelectorAll('.next');
 
+//console.log(prevoiusBtn);
+
 btns.forEach(function (btn) {
   btn.addEventListener('click', function (e) {
     //to fetch the current name to find the the proper id linked to that name
@@ -51,26 +53,37 @@ btns.forEach(function (btn) {
     let operation = e.currentTarget.classList;
     //operation for previous button
     if (operation.contains('previous')) {
-      currentId--;
-      data = reviews.find(function (person) {
-        return person.id === currentId;
-      });
-      name.textContent = data.name;
-      job.textContent = data.job;
-      img.setAttribute('src', data.img);
-      text.textContent = data.text;
+      if (currentId === 1) {
+        btn.disabled = true;
+        //console.log(btn);
+      } else {
+        currentId--;
+        data = reviews.find(function (person) {
+          return person.id === currentId;
+        });
+        btn.nextElementSibling.disabled = false;
+        name.textContent = data.name;
+        job.textContent = data.job;
+        img.setAttribute('src', data.img);
+        text.textContent = data.text;
+      }
     }
     //operation for next button
     else if (operation.contains('next')) {
-      btn.classList.contains('previous').disabled = false;
-      currentId++;
-      data = reviews.find(function (person) {
-        return person.id === currentId;
-      });
-      name.textContent = data.name;
-      job.textContent = data.job;
-      img.setAttribute('src', data.img);
-      text.textContent = data.text;
+      if (currentId === reviews.length) {
+        btn.disabled = true;
+        //console.log(btn);
+      } else {
+        btn.previousElementSibling.disabled = false;
+        currentId++;
+        data = reviews.find(function (person) {
+          return person.id === currentId;
+        });
+        name.textContent = data.name;
+        job.textContent = data.job;
+        img.setAttribute('src', data.img);
+        text.textContent = data.text;
+      }
     }
   });
 });
